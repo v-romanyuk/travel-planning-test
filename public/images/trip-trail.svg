@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" fill="none">
+  <!-- Request page illustration: the logo's trail from home to the destination, passing a transport (diamond),
+       a stay (square) and a place (ring), over contour lines. Transparent: it sits on the request page's primary (forest-700) panel, whose colour the home and
+       marker fills match. Brand greens only; ember is reserved for hard rules. -->
+  <defs>
+    <clipPath id="card">
+      <rect width="600" height="720" />
+    </clipPath>
+    <path id="hill" d="M-125 0C-125-80-65-130 5-125C85-120 135-60 125 15C115 90 45 125-25 115C-95 105-125 70-125 0Z" />
+    <path id="knoll" d="M-90 0C-90-55-40-85 15-80C70-75 100-35 92 15C84 65 30 85-20 78C-70 71-90 45-90 0Z" />
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(425 220) scale(150)">
+      <stop offset="0" stop-color="#6FA86B" stop-opacity="0.45" />
+      <stop offset="1" stop-color="#6FA86B" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <!-- Contours around the destination -->
+    <g transform="translate(425 220)" stroke="#2F7049" stroke-width="2">
+      <use href="#hill" transform="scale(2.6)" />
+      <use href="#hill" transform="scale(2.15)" />
+      <use href="#hill" transform="scale(1.75)" />
+      <use href="#hill" transform="scale(1.4)" />
+      <use href="#hill" transform="scale(1.08)" />
+      <use href="#hill" transform="scale(0.8)" />
+      <use href="#hill" transform="scale(0.55)" />
+      <use href="#hill" transform="scale(0.32)" />
+    </g>
+
+    <!-- A smaller rise near home -->
+    <g transform="translate(110 600) rotate(-18)" stroke="#2F7049" stroke-width="2">
+      <use href="#knoll" transform="scale(1.9)" />
+      <use href="#knoll" transform="scale(1.45)" />
+      <use href="#knoll" transform="scale(1.05)" />
+      <use href="#knoll" transform="scale(0.68)" />
+    </g>
+
+    <circle cx="425" cy="220" r="150" fill="url(#glow)" />
+
+    <!-- Map grid dots -->
+    <g fill="#2F7049">
+      <circle cx="430" cy="560" r="3" /><circle cx="470" cy="560" r="3" /><circle cx="510" cy="560" r="3" />
+      <circle cx="430" cy="600" r="3" /><circle cx="470" cy="600" r="3" /><circle cx="510" cy="600" r="3" />
+      <circle cx="430" cy="640" r="3" /><circle cx="470" cy="640" r="3" /><circle cx="510" cy="640" r="3" />
+      <circle cx="70" cy="90" r="3" /><circle cx="110" cy="90" r="3" /><circle cx="70" cy="130" r="3" />
+    </g>
+
+    <!-- The trail -->
+    <path
+      d="M120 610C200 600 262 548 236 470C212 398 118 382 150 310C182 238 296 292 340 250C368 223 392 222 425 220"
+      stroke="#DDEBDA" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 15"
+    />
+
+    <!-- Home -->
+    <circle cx="120" cy="610" r="17" fill="#1E5B3E" stroke="#F0F7EF" stroke-width="6" />
+
+    <!-- Transport: diamond -->
+    <rect x="224" y="458" width="24" height="24" transform="rotate(45 236 470)" fill="#1E5B3E" stroke="#F0F7EF" stroke-width="5" />
+
+    <!-- Stay: filled square -->
+    <rect x="137" y="297" width="26" height="26" rx="5" fill="#F0F7EF" />
+
+    <!-- Place: ring -->
+    <circle cx="340" cy="250" r="12" fill="#1E5B3E" stroke="#F0F7EF" stroke-width="5" />
+
+    <!-- Destination -->
+    <circle cx="425" cy="220" r="30" fill="#F0F7EF" />
+    <circle cx="425" cy="220" r="12" fill="#1E5B3E" />
+  </g>
+</svg>

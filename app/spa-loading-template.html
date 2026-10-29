@@ -1,0 +1,36 @@
+<!-- Shown until the SPA (ssr: false) mounts. Colours mirror the theme tokens in app/assets/styles/main.css. -->
+<div class="spa-loader">
+  <div class="spa-loader__spinner"></div>
+</div>
+<style>
+  .spa-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F2F5EF;
+  }
+
+  .spa-loader__spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(30, 91, 62, 0.2);
+    border-top-color: #1E5B3E;
+    border-radius: 50%;
+    animation: spa-loader-spin 0.8s linear infinite;
+  }
+
+  @keyframes spa-loader-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spa-loader__spinner {
+      animation-duration: 2.4s;
+    }
+  }
+</style>

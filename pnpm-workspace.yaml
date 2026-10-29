@@ -1,0 +1,12 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: false
+
+# Nitro's dev error handler uses source-map@0.7.6, whose WASM mapping parser
+# traps ("unreachable") while youch enhances stack frames. Redirect it to the
+# pure-JS source-map-js, which exposes the same API subset Nitro calls.
+overrides:
+  'source-map@0.7.6': 'npm:source-map-js@^1.2.1'

@@ -1,0 +1,1 @@
+ALTER TABLE "trips" ADD COLUMN "time_zone" varchar(64) DEFAULT 'UTC' NOT NULL;

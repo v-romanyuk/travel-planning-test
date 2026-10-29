@@ -1,0 +1,1 @@
+ALTER TABLE "profile_facts" DROP COLUMN "rule_examples";

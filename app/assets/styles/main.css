@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme static {
+  --font-sans: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Hanken Grotesk', ui-sans-serif, sans-serif;
+
+  /* Primary — the trail */
+  --color-forest-50: #F0F7EF;
+  --color-forest-100: #DDEBDA;
+  --color-forest-200: #BCD7B7;
+  --color-forest-300: #93BE8E;
+  --color-forest-400: #6FA86B;
+  --color-forest-500: #4E8A5A;
+  --color-forest-600: #2F7049;
+  --color-forest-700: #1E5B3E;
+  --color-forest-800: #184A33;
+  --color-forest-900: #123826;
+  --color-forest-950: #0A2217;
+
+  /* Neutral — sage-tinted greys */
+  --color-moss-50: #F2F5EF;
+  --color-moss-100: #E9EFE6;
+  --color-moss-200: #DCE5D9;
+  --color-moss-300: #C9D6C6;
+  --color-moss-400: #A9BBA6;
+  --color-moss-500: #6E8A73;
+  --color-moss-600: #4B5D52;
+  --color-moss-700: #3F5146;
+  --color-moss-800: #2E3F35;
+  --color-moss-900: #16241C;
+  --color-moss-950: #0E1812;
+
+  /* Hard rules — removes options, never decorative */
+  --color-ember-50: #FCF4EC;
+  --color-ember-100: #F8E7D6;
+  --color-ember-200: #EBCBAA;
+  --color-ember-300: #DDA878;
+  --color-ember-400: #CC814A;
+  --color-ember-500: #B4581C;
+  --color-ember-600: #9A4A12;
+  --color-ember-700: #7A3A0F;
+  --color-ember-800: #6E330B;
+  --color-ember-900: #4F250A;
+  --color-ember-950: #2E1505;
+
+  /* "Planning" animation: a traveller dot walks the trail while the kind markers light up in turn */
+  --animate-trail-walk: trail-walk 3.6s ease-in-out infinite;
+  --animate-trail-stop: trail-stop 3.6s ease-in-out infinite;
+}
+
+@keyframes trail-walk {
+  0% { left: 0%; }
+  45%, 55% { left: 100%; }
+  100% { left: 0%; }
+}
+
+/* Each marker sets its own animation-delay so the pop follows the dot */
+@keyframes trail-stop {
+  0%, 20%, 100% { transform: scale(1); opacity: 0.45; }
+  10% { transform: scale(1.5); opacity: 1; }
+}
+
+/* Light-only PoC. Shades shifted one step darker than Nuxt UI defaults so muted text passes 4.5:1 on the sage ground */
+:root {
+  --ui-radius: 0.375rem;
+
+  --ui-primary: var(--ui-color-primary-700);
+  --ui-rule: var(--ui-color-rule-600);
+
+  --ui-text-dimmed: var(--ui-color-neutral-500);
+  --ui-text-muted: var(--ui-color-neutral-600);
+  --ui-text-toned: var(--ui-color-neutral-700);
+  --ui-text: var(--ui-color-neutral-800);
+  --ui-text-highlighted: var(--ui-color-neutral-900);
+
+  --ui-bg: #FFFFFF;
+  --ui-bg-muted: var(--ui-color-neutral-50);
+  --ui-bg-elevated: var(--ui-color-neutral-100);
+  --ui-bg-accented: var(--ui-color-neutral-200);
+
+  --ui-border: var(--ui-color-neutral-300);
+  --ui-border-muted: var(--ui-color-neutral-200);
+  --ui-border-accented: var(--ui-color-neutral-400);
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
+}
+
+body {
+  background-color: var(--ui-bg-muted);
+}
+
+/* Tailwind v4 dropped the pointer cursor from buttons; Nuxt UI doesn't add one */
+@layer base {
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  [role='checkbox']:not([data-disabled]),
+  [role='option']:not([data-disabled]),
+  [role='menuitem']:not([data-disabled]),
+  [role='tab']:not([data-disabled]),
+  a[href],
+  label[for],
+  label:has(input:not(:disabled)),
+  label:has([role='checkbox']:not([data-disabled])),
+  summary,
+  select:not(:disabled) {
+    cursor: pointer;
+  }
+}

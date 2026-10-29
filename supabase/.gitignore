@@ -1,0 +1,12 @@
+# Supabase
+.branches
+.temp
+
+# dotenvx
+.env.keys
+.env.local
+.env.*.local
+
+# Prod snapshot pulled by `pnpm db:pull` (contains customer data).
+# Storage objects are ignored by .seed-data/storage/images/.gitignore, which keeps the folder for objects_path.
+/.seed-data/*.sql

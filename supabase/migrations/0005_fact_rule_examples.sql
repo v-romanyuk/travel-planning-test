@@ -1,0 +1,1 @@
+ALTER TABLE "profile_facts" ADD COLUMN "rule_examples" jsonb;
